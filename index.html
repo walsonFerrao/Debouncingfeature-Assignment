@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+         justify-content: center;
+         text-align: center;
+        }
+        .div>input{
+            height: 30px;
+            width:25%;
+        }
+        #display{
+            
+          width: 100%;
+          text-align: center;
+          margin-top: 25px;
+          font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <input type="text">
+    </div>
+    <div id="display">
+
+    </div>
+</body>
+</html>
+<script>
+
+document.getElementsByTagName("input")[0].addEventListener("input",debounce(fetchdata,3000))
+
+
+
+
+
+
+
+function fetchdata(){
+
+
+    let data=document.getElementsByTagName("input")[0].value
+console.log(data)
+document.getElementById('display').innerHTML=data
+
+}
+
+
+function debounce(func,delay)
+{
+let mydebounce
+
+return function()
+{
+
+ if(mydebounce)
+ {
+     clearInterval(mydebounce)
+ }
+
+mydebounce=setTimeout(func,delay)
+
+}
+
+
+
+}
+
+
+</script>
